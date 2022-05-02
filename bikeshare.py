@@ -7,7 +7,7 @@ from datetime import timedelta as td
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
-              
+
 
 def get_filters():
     """
@@ -26,7 +26,7 @@ def get_filters():
             print('Sorry, that is not a valid city. Try again!')
         else:
             break
-       
+
     # get user input for month (all, january, february, ... , june)
     while True:
         month = str.lower(input('Should the data be for all months or a specific month(January to June)?  '))
@@ -57,7 +57,7 @@ def load_data(city, month, day):
     Returns:
         df - pandas DataFrame containing city data filtered by month and day
     """
-    
+
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
@@ -77,21 +77,21 @@ def load_data(city, month, day):
         # use the index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
-    
+
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
     # filter by day of week if applicable
     if day != 'all':
-        
-        
+
+
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
-    
+
     return df
 
 
-def time_stats(df):
+def time_statistics(df):
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
@@ -153,11 +153,11 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # Display counts of user types    
+    # Display counts of user types
     print('The categories of users and the count of each are as follow\n', df['User Type'].value_counts())
 
     # Display counts of gender
-    """Washington does not have gender and birth year data. 
+    """Washington does not have gender and birth year data.
     Using try to avoid break of code"""
     try:
         print('\nThe number of users for each gender are\n', df['Gender'].value_counts())
@@ -182,7 +182,7 @@ def user_stats(df):
         # Display this for city(s) without birth year data
         print('Birth year data is unavailable for this city')
 
-        
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
