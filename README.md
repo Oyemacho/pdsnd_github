@@ -3,12 +3,11 @@
 ### Date created
 This project was created on the 1/5/2022.
 
-
 ### Project Title
 Version Control Project
 
 ### Description
-Describe what your project is about and what it does
+Using Git commands for version control
 
 ### Files used
 Include the files used
