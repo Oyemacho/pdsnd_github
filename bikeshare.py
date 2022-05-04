@@ -23,7 +23,7 @@ def get_filters():
     while True:
         city = str.lower(input('Which city would you like to get data from? Chicago, New York City or Washington?: '))
         if city.lower() not in ('chicago', 'washington', 'new york city'):
-            print('Sorry, that is not a valid city. Try again!')
+            print('Sorry, your entry is not a valid city. Try again!')
         else:
             break
 
@@ -31,7 +31,7 @@ def get_filters():
     while True:
         month = str.lower(input('Should the data be for all months or a specific month(January to June)?  '))
         if month.lower() not in ('all', 'january', 'february', 'march', 'april', 'may', 'june'):
-            print('Sorry, that is not a valid month. Try again!')
+            print('Sorry, your entry is not a valid month. Try again!')
         else:
             break
 
@@ -39,7 +39,7 @@ def get_filters():
     while True:
         day = str.lower(input('Which day of the week? '))
         if day.title() not in ('All', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'):
-            print('Sorry, that is not a valid day. Try again!')
+            print('Sorry, your entry is not a valid day. Try again!')
         else:
             break
     print('-'*40)

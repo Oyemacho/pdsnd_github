@@ -10,7 +10,7 @@ Version Control Project
 Using Git commands for version control
 
 ### Files used
-Include the files used
+Python data files were provided for the project
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
